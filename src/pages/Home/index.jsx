@@ -13,18 +13,15 @@ function Home() {
     const inputEmail = useRef()
 
     async function registerNewUser() {
-        try {
-            const response = await api.post('/usuarios', {
+            const data = await api.post('/usuarios', {
                 email: inputEmail.current.value,
                 name: inputName.current.value,
                 age: parseInt(inputAge.current.value)
             })
-            return response.data
-        } catch (error) {
-            console.error('Erro ao registrar usuário:', error)
-            throw error // ou trate o erro de acordo
-        }
+            console.log(data)
     }
+
+ 
 
     return (
         <Container>
