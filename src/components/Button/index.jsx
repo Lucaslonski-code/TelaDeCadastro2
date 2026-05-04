@@ -1,9 +1,9 @@
 import { Button } from './styles.js'
 
-function DefaultButton(){
-
+function DefaultButton({ children, ...props}){
+// spread operator, o "...props" pega todas as outras propriedades que não foram desestruturadas, e passa para o componente Button.
     return (
-        <Button>Botão</Button>
+        <Button {...props}>{children}</Button>
     )
 }
 
