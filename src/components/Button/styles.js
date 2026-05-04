@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Button = styled.button`
-    border: none;
-    background: linear-gradient(180deg, #FE7E5D 0%, #FF6378 100%);
+    border: ${props => props.theme === 'primary' ? 'none' : '2px solid #FE7E5D'};
+    background: ${props => props.theme === 'primary' ? 'linear-gradient(180deg, #FE7E5D 0%, #FF6378 100%)' : 'transparent'};
     font-size: 16px;
     color: #fff;
     padding: 16px 32px;
@@ -11,11 +11,11 @@ export const Button = styled.button`
     border-radius: 30px;
 
     &:hover {
-        opacity: 0.8;
+        ${props => props.theme === 'primary' ? 'opacity: 0.8;' : 'background-color: #99f; color: #fff; '};
     }
 
     &:active {
-        opacity: 0.5;
+        ${props => props.theme === 'primary' ? 'opacity: 0.5;' : 'background-color: #99f; color: #fff; '};
     }
 
 `
