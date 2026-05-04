@@ -1,11 +1,10 @@
 import { TopBackground } from "./styles";
+import UsersImage from '../../assets/users.png'
 
-function TopBackgroundComponent( { children } ) {
+function TopBackgroundComponent() {
 
     return (
-        <TopBackground>
-            {children}
-        </TopBackground>
+        <TopBackground><img src={UsersImage} alt="imagem-usuarios" /></TopBackground>
     )
 }
 
