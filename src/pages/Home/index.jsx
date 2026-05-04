@@ -2,10 +2,11 @@ import { useRef } from 'react'
 import api from '../../services/api'
 
 import {
-    Title, Container, TopBackground, Form, ContainerInputs, Input, Button, InputLabel,
+    Title, Container, TopBackground, Form, ContainerInputs, Input, InputLabel,
 } from './styles'
 
 import UsersImage from '../../assets/users.png'
+import Button from '../../components/Button'
 
 function Home() {
     const inputName = useRef()
