@@ -11,11 +11,11 @@ export const Button = styled.button`
     border-radius: 30px;
 
     &:hover {
-        ${props => props.theme === 'primary' ? 'opacity: 0.8;' : 'background-color: #99f; color: #fff; '};
+        ${props => props.theme === 'primary' ? 'opacity: 0.8;' : 'background-color: #99f'};
     }
 
     &:active {
-        ${props => props.theme === 'primary' ? 'opacity: 0.5;' : 'background-color: #99f; color: #fff; '};
+        ${props => props.theme === 'primary' ? 'opacity: 0.5;' : 'background-color: #99f'};
     }
 
 `
