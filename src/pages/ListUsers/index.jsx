@@ -14,11 +14,10 @@ import multiavatar from '@multiavatar/multiavatar/esm'
 
 function ListUsers() {
     const [users, setUsers] = useState([])
+     const navigate = useNavigate()
 
     //TODA VEZ que a tela carrega, o useEffect é chamado, e dentro do useEffect tem a função que busca os usuários cadastrados, e depois exibe eles na tela.
     //TODA VEZ que uma variavel muda, o useEffect é chamado, e dentro do useEffect tem a função que busca os usuários 
-
-
 
     useEffect(() => {
         async function getUsers() {
@@ -29,11 +28,16 @@ function ListUsers() {
         getUsers()
     }, [])
 
-    const navigate = useNavigate()
+    async function deleteUsers(id) {
+        await api.delete(`/usuarios/${id}`)
+
+        const updatedUsers = users.filter(user => user.id !== id)
+        
+        setUsers(updatedUsers)
+    }
 
     const getAvatarDataUrl = (seed) => {
     const svgString = multiavatar(seed);
-    // Codifica a string SVG para base64 para uso em Data URL
     const svg = btoa(unescape(encodeURIComponent(svgString)));
     return `data:image/svg+xml;base64,${svg}`;
 };
@@ -52,7 +56,7 @@ function ListUsers() {
                             <p>{user.age}</p>
                             <p>{user.email}</p>
                         </div>
-                        <TrashIcon src={Trash} alt='ícone de lixeira'/>
+                        <TrashIcon src={Trash} alt='ícone de lixeira' onClick={() => deleteUsers(user.id)}/>
                     </CardUsers>
 
                     //o "users.map" é um método de array que percorre cada elemento do array "users" e retorna um novo array com os elementos modificados.
