@@ -2,12 +2,14 @@ import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../../services/api'
 
+
 import {
-    Title, Container, Form, ContainerInputs, Input, InputLabel,
+    Container, Form, ContainerInputs, Input, InputLabel,
 } from './styles'
 
 import Button from '../../components/Button'
 import TopBackground from '../../components/TopBackground'
+import Title from '../../components/Title'
 
 function Home() {
     const inputName = useRef()

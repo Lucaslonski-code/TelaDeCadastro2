@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const TopBackground = styled.div`
+    margin-top: 20px;
     background: linear-gradient(to right, #fe7e5d, #7f3841);
     height: 30vh;
     width: 90vw;

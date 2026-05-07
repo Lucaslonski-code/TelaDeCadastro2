@@ -9,6 +9,7 @@ export const Button = styled.button`
     width: fit-content;
     cursor: pointer;
     border-radius: 30px;
+    margin-bottom: ${props => props.theme === 'primary' ? '0' : '20px'};
 
     &:hover {
         ${props => props.theme === 'primary' ? 'opacity: 0.8;' : 'background-color: #99f'};

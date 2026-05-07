@@ -18,14 +18,6 @@ export const Form = styled.form`
     max-width: 500px;
 `
 
-export const Title = styled.h2`
-    color: #fff;
-    text-align: center;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-`
-
 export const ContainerInputs = styled.div`
     display: flex;
     gap: 20px;
